@@ -1,5 +1,8 @@
 name: Event Demo
-on: ...
+on:
+  pull_request:
+    types: [opened, edited]
+  workflow_dispatch:
 jobs:
   demo:
     runs-on: ubuntu-latest
