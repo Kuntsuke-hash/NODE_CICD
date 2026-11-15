@@ -2,7 +2,16 @@ name: Event Demo
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+    branches:
+      - main
+      - "dev-*" # start with dev-team1
+      - "feature/**" #for more feature/auth/login
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - "dev-*" # start with dev-team1
+      - "feature/**" #for more feature/auth/login
 jobs:
   demo:
     runs-on: ubuntu-latest
