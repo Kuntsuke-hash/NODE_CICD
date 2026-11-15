@@ -1,14 +1,14 @@
 name: Event Demo
 on:
   pull_request:
-    types: [opened, edited]
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
 jobs:
   demo:
     runs-on: ubuntu-latest
     steps:
       - name: Output event data
-        run: echo ""{{ toJson(github.event) }}""
+        run: echo "${{ toJson(github.event) }}"
       - name: Get code
         uses: actions/checkout@v4
       - name: Install dependencies
