@@ -1,7 +1,7 @@
 name: Event Demo
 on:
   pull_request:
-    types: [opened, edited]
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
 jobs:
   demo:
